@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "acs_admin",
+    "password": "P@$$w0rd",
+    "database": "ACSDB",
+    "host": "acs-database.database.windows.net",
+    "dialect": "mssql"
+  },
+  "test": {
+    "username": "acs_admin",
+    "password": "P@$$w0rd",
+    "database": "database_development",
+    "host": "acs-database.database.windows.net",
+    "dialect": "mssql"
+  },
+  "production": {
+    "username": "acs_admin",
+    "password": "P@$$w0rd",
+    "database": "database_development",
+    "host": "acs-database.database.windows.net",
+    "dialect": "mssql"
+  }
+}
