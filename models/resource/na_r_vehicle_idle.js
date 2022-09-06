@@ -1,33 +1,33 @@
-// NA_U_USERS
+// NA_R_VEHICLE_IDLE
 
 const Sequelize = require('sequelize');
 
-module.exports = class NA_U_USERS extends Sequelize.Model {
+module.exports = class NA_R_VEHICLE_IDLE extends Sequelize.Model {
     static init(sequelize) {
         return super.init({
-            loginId: {
+            id: {
                 type : Sequelize.STRING(64),
                 allowNull: false,    
                 primaryKey: true       
             },
-            password: {
-                type : Sequelize.STRING(16),
+            vehicleId: {
+                type : Sequelize.STRING(64),
                 allowNull: true,
             },
-            fullName: {
-                type: Sequelize.STRING(64),
+            idleTime: {
+                type : Sequelize.TIME,
                 allowNull: true,
             },
-            userGroup: {
-                type: Sequelize.STRING(16),
+            bayId: {
+                type : Sequelize.STRING(64),
                 allowNull: true,
             },
         }, {
             sequelize,
             timestamps: false,
             underscored : false,
-            modelName: 'USERS',
-            tableName: 'NA_U_USERS',
+            modelName: 'VEHICLE_IDLE',
+            tableName: 'NA_R_VEHICLE_IDLE',
             paranoid: false,
             charset: 'utf8',
             collate: 'utf8_general_ci',

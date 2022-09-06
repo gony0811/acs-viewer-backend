@@ -4,8 +4,9 @@ const app = express();
 const path = require('path');
 const morgan = require('morgan');
 const nunjucks = require('nunjucks');
-
-const {sequelize, USER, ALARM} = require('./models');
+const indexRouter = require('./routers');
+const cors = require('cors');
+const {sequelize, USER, ALARM, ALARMSPEC} = require('./models');
 
 dotenv.config();
 
@@ -21,14 +22,14 @@ sequelize.sync({fore: false}).then(()=>{
     console.error(err);
 });
 
-
+app.use(cors());
 app.set('port', process.env.PORT || 3000);
+app.use('/',indexRouter);
 
 app.get('/', async (req, res) => {
-    await ALARM.findAll({}).then((data) => {
-        res.send(data);
-    })
-})
-.listen(app.get('port'), () => {
+    res.header("Access-Control-Allow-Origin", "*");
+});
+
+app.listen(app.get('port'), () => {
     console.log(app.get('port'), '빈 포트에서 대기중임');
 });

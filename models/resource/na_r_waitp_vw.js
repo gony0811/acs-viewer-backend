@@ -1,33 +1,33 @@
-// NA_U_USERS
+// NA_R_WAITP_VW
 
 const Sequelize = require('sequelize');
 
-module.exports = class NA_U_USERS extends Sequelize.Model {
+module.exports = class NA_R_WAITP_VW extends Sequelize.Model {
     static init(sequelize) {
         return super.init({
-            loginId: {
+            id: {
                 type : Sequelize.STRING(64),
                 allowNull: false,    
                 primaryKey: true       
             },
-            password: {
-                type : Sequelize.STRING(16),
+            type: {
+                type : Sequelize.STRING(64),
                 allowNull: true,
             },
-            fullName: {
-                type: Sequelize.STRING(64),
+            zoneId: {
+                type : Sequelize.STRING(64),
                 allowNull: true,
             },
-            userGroup: {
-                type: Sequelize.STRING(16),
+            waitingLimit: {
+                type : Sequelize.STRING(64),
                 allowNull: true,
             },
         }, {
             sequelize,
             timestamps: false,
             underscored : false,
-            modelName: 'USERS',
-            tableName: 'NA_U_USERS',
+            modelName: 'WAITP_VW',
+            tableName: 'NA_R_WAITP_VW',
             paranoid: false,
             charset: 'utf8',
             collate: 'utf8_general_ci',

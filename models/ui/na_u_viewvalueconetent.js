@@ -1,33 +1,37 @@
-// NA_U_USERS
+// NA_U_VIEWVALUECONTENT
 
 const Sequelize = require('sequelize');
 
-module.exports = class NA_U_USERS extends Sequelize.Model {
+module.exports = class NA_U_VIEWVALUECONTENT extends Sequelize.Model {
     static init(sequelize) {
         return super.init({
-            loginId: {
+            id: {
                 type : Sequelize.STRING(64),
                 allowNull: false,    
                 primaryKey: true       
             },
-            password: {
-                type : Sequelize.STRING(16),
+            name: {
+                type : Sequelize.STRING(64),
                 allowNull: true,
             },
-            fullName: {
+            type: {
+                type: Sequelize.STRING(6),
+                allowNull: true,
+            },
+            value: {
                 type: Sequelize.STRING(64),
                 allowNull: true,
             },
-            userGroup: {
-                type: Sequelize.STRING(16),
+            sequence: {
+                type: Sequelize.STRING(5),
                 allowNull: true,
             },
         }, {
             sequelize,
             timestamps: false,
             underscored : false,
-            modelName: 'USERS',
-            tableName: 'NA_U_USERS',
+            modelName: 'VIEWVALUECONTENT',
+            tableName: 'NA_U_VIEWVALUECONTENT',
             paranoid: false,
             charset: 'utf8',
             collate: 'utf8_general_ci',

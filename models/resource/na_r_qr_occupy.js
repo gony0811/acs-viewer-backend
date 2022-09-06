@@ -1,33 +1,29 @@
-// NA_U_USERS
+// NA_R_QR_OCCUPY
 
 const Sequelize = require('sequelize');
 
-module.exports = class NA_U_USERS extends Sequelize.Model {
+module.exports = class NA_R_QR_OCCUPY extends Sequelize.Model {
     static init(sequelize) {
         return super.init({
-            loginId: {
-                type : Sequelize.STRING(64),
+            id: {
+                type : Sequelize.STRING(50),
                 allowNull: false,    
                 primaryKey: true       
             },
-            password: {
-                type : Sequelize.STRING(16),
+            agvId: {
+                type : Sequelize.STRING(50),
                 allowNull: true,
             },
-            fullName: {
-                type: Sequelize.STRING(64),
-                allowNull: true,
-            },
-            userGroup: {
-                type: Sequelize.STRING(16),
+            changedTime: {
+                type : Sequelize.TIME,
                 allowNull: true,
             },
         }, {
             sequelize,
             timestamps: false,
             underscored : false,
-            modelName: 'USERS',
-            tableName: 'NA_U_USERS',
+            modelName: 'QR_OCCUPY',
+            tableName: 'NA_R_QR_OCCUPY',
             paranoid: false,
             charset: 'utf8',
             collate: 'utf8_general_ci',

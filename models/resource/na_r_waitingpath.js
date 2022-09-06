@@ -1,33 +1,29 @@
-// NA_U_USERS
+// NA_R_WAITINGPATH
 
 const Sequelize = require('sequelize');
 
-module.exports = class NA_U_USERS extends Sequelize.Model {
+module.exports = class NA_R_WAITINGPATH extends Sequelize.Model {
     static init(sequelize) {
         return super.init({
-            loginId: {
+            id: {
                 type : Sequelize.STRING(64),
-                allowNull: false,    
+                allowNull: true,    
                 primaryKey: true       
             },
-            password: {
-                type : Sequelize.STRING(16),
+            waitingPath: {
+                type : Sequelize.STRING(),
                 allowNull: true,
             },
-            fullName: {
-                type: Sequelize.STRING(64),
-                allowNull: true,
-            },
-            userGroup: {
-                type: Sequelize.STRING(16),
+            tripLenNode: {
+                type : Sequelize.STRING(),
                 allowNull: true,
             },
         }, {
             sequelize,
             timestamps: false,
             underscored : false,
-            modelName: 'USERS',
-            tableName: 'NA_U_USERS',
+            modelName: 'WAITINGPATH',
+            tableName: 'NA_R_WAITINGPATH',
             paranoid: false,
             charset: 'utf8',
             collate: 'utf8_general_ci',

@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": "acs_admin",
-    "password": "P@$$w0rd",
+    "username": "sa",
+    "password": "1234",
     "database": "ACSDB",
-    "host": "acs-database.database.windows.net",
+    "host": "localhost",
     "dialect": "mssql"
   },
   "test": {

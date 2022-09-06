@@ -1,33 +1,29 @@
-// NA_U_USERS
+// NA_R_ORDER_PAIR
 
 const Sequelize = require('sequelize');
 
-module.exports = class NA_U_USERS extends Sequelize.Model {
+module.exports = class NA_R_ORDER_PAIR extends Sequelize.Model {
     static init(sequelize) {
         return super.init({
-            loginId: {
+            id: {
                 type : Sequelize.STRING(64),
                 allowNull: false,    
                 primaryKey: true       
             },
-            password: {
-                type : Sequelize.STRING(16),
-                allowNull: true,
+            orderGroup: {
+                type : Sequelize.STRING(64),
+                allowNull: false,
             },
-            fullName: {
-                type: Sequelize.STRING(64),
-                allowNull: true,
-            },
-            userGroup: {
-                type: Sequelize.STRING(16),
+            status: {
+                type : Sequelize.STRING(32),
                 allowNull: true,
             },
         }, {
             sequelize,
             timestamps: false,
             underscored : false,
-            modelName: 'USERS',
-            tableName: 'NA_U_USERS',
+            modelName: 'ORDER_PAIR',
+            tableName: 'NA_R_ORDER_PAIR',
             paranoid: false,
             charset: 'utf8',
             collate: 'utf8_general_ci',

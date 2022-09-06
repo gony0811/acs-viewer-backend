@@ -1,33 +1,41 @@
-// NA_U_USERS
+// NA_R_STATION_VW
 
 const Sequelize = require('sequelize');
 
-module.exports = class NA_U_USERS extends Sequelize.Model {
+module.exports = class NA_R_STATION_VW extends Sequelize.Model {
     static init(sequelize) {
         return super.init({
-            loginId: {
+            id: {
                 type : Sequelize.STRING(64),
                 allowNull: false,    
                 primaryKey: true       
             },
-            password: {
-                type : Sequelize.STRING(16),
+            linkId: {
+                type : Sequelize.STRING(64),
                 allowNull: true,
             },
-            fullName: {
-                type: Sequelize.STRING(64),
+            parentNode: {
+                type : Sequelize.STRING(64),
                 allowNull: true,
             },
-            userGroup: {
-                type: Sequelize.STRING(16),
+            nextNode: {
+                type : Sequelize.STRING(64),
+                allowNull: true,
+            },
+            type: {
+                type : Sequelize.STRING(64),
+                allowNull: true,
+            },
+            distance: {
+                type : Sequelize.INTEGER,
                 allowNull: true,
             },
         }, {
             sequelize,
             timestamps: false,
             underscored : false,
-            modelName: 'USERS',
-            tableName: 'NA_U_USERS',
+            modelName: 'STATION_VW',
+            tableName: 'NA_R_STATION_VW',
             paranoid: false,
             charset: 'utf8',
             collate: 'utf8_general_ci',

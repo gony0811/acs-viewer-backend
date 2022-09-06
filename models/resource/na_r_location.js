@@ -1,33 +1,41 @@
-// NA_U_USERS
+// NA_R_LOCATION
 
 const Sequelize = require('sequelize');
 
-module.exports = class NA_U_USERS extends Sequelize.Model {
+module.exports = class NA_R_LOCATION extends Sequelize.Model {
     static init(sequelize) {
         return super.init({
-            loginId: {
+            portId: {
                 type : Sequelize.STRING(64),
                 allowNull: false,    
                 primaryKey: true       
             },
-            password: {
-                type : Sequelize.STRING(16),
+            stationId: {
+                type : Sequelize.STRING(64),
                 allowNull: true,
             },
-            fullName: {
-                type: Sequelize.STRING(64),
+            type: {
+                type : Sequelize.STRING(8),
                 allowNull: true,
             },
-            userGroup: {
-                type: Sequelize.STRING(16),
+            carrierType: {
+                type : Sequelize.STRING(8),
+                allowNull: true,
+            },
+            direction: {
+                type : Sequelize.STRING(8),
+                allowNull: true,
+            },
+            state: {
+                type : Sequelize.STRING(20),
                 allowNull: true,
             },
         }, {
             sequelize,
             timestamps: false,
             underscored : false,
-            modelName: 'USERS',
-            tableName: 'NA_U_USERS',
+            modelName: 'LOCATION',
+            tableName: 'NA_R_LOCATION',
             paranoid: false,
             charset: 'utf8',
             collate: 'utf8_general_ci',
