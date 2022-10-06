@@ -20,6 +20,26 @@ router.get('/current-alarm', async function(req, res, next) {
     })
   });
 
+  router.get('/cache-node', async function(req, res, next) {
+    await NODE.findAll({}).then((data) => {
+      var nodes = new Array();  
+      data.forEach((element)=>{
+          var node = {
+            coordinates: [element['xPos']/100, element['yPos']/100],
+            attributes: {
+              id: element['id'],
+              type: element['type']
+            }
+          }
+          nodes.push(node);
+        })
+      
+      res.send(nodes);
+    })
+
+   
+  });
+
 
 module.exports = router;
 

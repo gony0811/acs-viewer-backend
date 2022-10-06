@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "sa",
-    "password": "1234",
+    "password": "P@$$w0rd",
     "database": "ACSDB",
     "host": "localhost",
     "dialect": "mssql"
